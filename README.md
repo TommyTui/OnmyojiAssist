@@ -4,7 +4,7 @@
 
 ------
 
-![](resources\icn.png)
+![](https://github.com/TommyTui/OnmyojiAssist/blob/master/resources/icn.png?raw=true)
 
 [README in English](README_en.md)
 
