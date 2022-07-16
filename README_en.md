@@ -2,7 +2,7 @@
 
 ------
 
-![](D:\project\Onmyoji\resources\icn.png)
+![](resources\icn.png)
 
 [中文README](README.md)
 

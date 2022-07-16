@@ -4,7 +4,7 @@
 
 ------
 
-![](D:\project\Onmyoji\resources\icn.png)
+![](resources\icn.png)
 
 [README in English](README_en.md)
 
