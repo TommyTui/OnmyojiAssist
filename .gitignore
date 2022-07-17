@@ -1,2 +1,5 @@
 .idea/
 tmp/
+build/
+dist/
+/main.spec

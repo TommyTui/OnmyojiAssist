@@ -107,9 +107,9 @@ class Worker(Thread):
                 self.control.realm_raid(total)
                 logging.info("完成：刷结界")
 
-            logging.info("已完成所有任务")
         except error:
             logging.error("无法截图，请确认游戏在前台运行")
+        logging.info("已完成所有任务")
 
     def exc(self):
         ctypes.pythonapi.PyThreadState_SetAsyncExc(ctypes.c_long(self.thread_id), ctypes.py_object(StopException))

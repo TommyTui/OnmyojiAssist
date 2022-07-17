@@ -42,6 +42,30 @@
 
 ------
 
+## 使用方法
+
+现在打包`paddle`和`paddleocr`有问题，一直报错，所以要运行只能新建一个python环境来运行
+
+`python version == 3.8`
+
+安装[CUDA toolkit v11.2]([CUDA Toolkit 11.2 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11.2.0-download-archive)) + [cudnn v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (cudnn可能需要Nvidia developer账号)
+
+安装`paddle`：
+
+`conda install paddlepaddle-gpu==2.3.1 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge `
+
+安装其余：
+
+`pip install paddleocr pygetwindow`
+
+`conda install -c conda-forge pyautogui`
+
+`conda install -c anaconda pyqt`
+
+运行程序：
+
+`python src/main.py`
+
 ## 使用说明
 
 1. 项目刚开始做，可能会有不少bug
@@ -51,4 +75,5 @@
 5. 如果有使用多个显示器，请保证阴阳师在主显示器上
 6. 如果程序卡住可能是识别出现问题，请将窗口拖到其他位置
 7. 如果程序正常运行结束，加成会自动关闭。如果用户中断了程序（点了停止按钮），加成不会关闭，请手动关闭加成
+8. `.exe`要以后等`paddle`和`paddleocr`修一修他们的bug才会有了
 

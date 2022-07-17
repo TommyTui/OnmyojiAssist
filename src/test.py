@@ -1,3 +1,5 @@
+import ocr
+
 # game_ui_control.enter_game()
 # game_ui_control.wait_for_entering()
 # game_ui_control.quit_notice()
@@ -10,3 +12,5 @@
 # game_ui_control.lock_team()
 # game_ui_control.start_battle()
 # sys.exit()
+
+ocr.get_position('resources/unlock_team.png', '阵容')
