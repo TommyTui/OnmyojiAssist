@@ -12,7 +12,7 @@
 
 一款阴阳师小助手
 
-基于图像识别，自动无限刷御魂
+基于[OpenCV](https://opencv.org/)和[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)，自动无限刷御魂
 
 灵感来源于[MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)
 
@@ -46,13 +46,21 @@
 
 现在打包`paddle`和`paddleocr`有问题，一直报错，所以要运行只能新建一个python环境来运行
 
-`python version == 3.8`
+首先确保已安装[Anaconda](https://www.anaconda.com/)以及[CUDA toolkit v11.2](https://developer.nvidia.com/cuda-11.2.0-download-archive) + [cuDNN v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (cuDNN可能需要Nvidia developer账号)
 
-安装[CUDA toolkit v11.2]([CUDA Toolkit 11.2 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11.2.0-download-archive)) + [cudnn v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (cudnn可能需要Nvidia developer账号)
+然后你可以通过运行`setup.bat`来一键安装虚拟环境以及所有依赖
+
+
+
+或者你可以通过下面的方式手动安装
+
+`conda create -n OnmyojiAssist python=3.8`
 
 安装`paddle`：
 
-`conda install paddlepaddle-gpu==2.3.1 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge `
+```
+conda install paddlepaddle-gpu==2.3.1 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+```
 
 安装其余：
 
@@ -62,9 +70,15 @@
 
 `conda install -c anaconda pyqt`
 
+你还需要去`venv\Lib\site-packages\paddle\libs\`手动删除`libiomp5md.dll`
+
+
+
 运行程序：
 
-`python src/main.py`
+如果你通过` setup.bat`安装了虚拟环境, 或者你严格按照上面的步骤安装了虚拟环境，你可以运行`start.bat`来启动程序
+
+你也可以通过在虚拟环境中运行`python src/main.py`来启动程序
 
 ## 使用说明
 
