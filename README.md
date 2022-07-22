@@ -46,20 +46,26 @@
 
 现在打包`paddle`和`paddleocr`有问题，一直报错，所以要运行只能新建一个python环境来运行
 
-首先确保已安装[Anaconda](https://www.anaconda.com/)以及[CUDA toolkit v11.2](https://developer.nvidia.com/cuda-11.2.0-download-archive) + [cuDNN v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (cuDNN可能需要Nvidia developer账号)
+首先确保已安装[Anaconda](https://www.anaconda.com/)
 
-然后你可以通过运行`setup.bat`来一键安装虚拟环境以及所有依赖
+如果你的电脑有CUDA GPU, 那么你需要安装[CUDA toolkit v11.2](https://developer.nvidia.com/cuda-11.2.0-download-archive) + [cuDNN v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (cuDNN可能需要Nvidia developer账号)
+然后你可以通过运行`setup_gpu.bat`来一键安装虚拟环境以及所有依赖
 
-
+如果你的电脑不支持CUDA, 那么你可以直接运行`setup_cpu.bat`
 
 或者你可以通过下面的方式手动安装
 
 `conda create -n OnmyojiAssist python=3.8`
 
-安装`paddle`：
+安装`paddle (gpu)`：
 
 ```
 conda install paddlepaddle-gpu==2.3.1 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+```
+或`paddle (cpu)`：
+
+```
+conda install paddlepaddle==2.3.1 --channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/
 ```
 
 安装其余：
