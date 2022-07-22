@@ -1,4 +1,5 @@
 from paddleocr import PaddleOCR
+from paddle.fluid import is_compiled_with_cuda
 
 
 class NotFound(Exception):
@@ -6,9 +7,8 @@ class NotFound(Exception):
 
 
 def get_position(img, text):
-    ocr = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=True)
-    # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    # cv2.imwrite('tmp/crop.png', img)
+    use_gpu = is_compiled_with_cuda()
+    ocr = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=use_gpu)
     result = ocr.ocr(img, cls=True)
     for line in result:
         if line[1][0] == text:

@@ -6,13 +6,16 @@ from PyQt5.QtWidgets import QApplication
 from view import Window
 
 
-def clean_tmp():
-    for file in os.listdir('tmp'):
-        os.remove('tmp/' + file)
+def init_tmp():
+    if os.path.exists('tmp'):
+        for file in os.listdir('tmp'):
+            os.remove('tmp/' + file)
+    else:
+        os.mkdir('tmp')
 
 
 if __name__ == '__main__':
-    clean_tmp()
+    init_tmp()
     app = QApplication(sys.argv)
     win = Window()
     win.show()
