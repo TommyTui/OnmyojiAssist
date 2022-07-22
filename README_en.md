@@ -38,21 +38,27 @@ Receiving daily awards
 
 Currently I am having trouble packaging `paddle` and `paddleocr` (will get piles of errors with `PyInstaller` or `cx_Freeze`). The only way to run this is by creating a new python venv and installing all the required packages.
 
-First you need to install [Anaconda](https://www.anaconda.com/) and [CUDA toolkit v11.2]([CUDA Toolkit 11.2 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11.2.0-download-archive)) + [cuDNN v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (installing cuDNN may require a free Nvidia developer account).
+First you need to install [Anaconda](https://www.anaconda.com/). 
 
-Then you can setup the venv by running `setup.bat`.
+If your computer supports CUDA, you can use the gpu version by installing [CUDA toolkit v11.2]([CUDA Toolkit 11.2 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-11.2.0-download-archive)) + [cuDNN v8.1.1](https://developer.nvidia.com/compute/machine-learning/cudnn/secure/8.1.1.33/11.2_20210301/cudnn-11.2-windows-x64-v8.1.1.33.zip) (installing cuDNN may require a free Nvidia developer account).
+Then you can setup the venv by running `setup_gpu.bat`.
 
-
+Otherwise, you can setup the venv by running `setup_cpu.bat`.
 
 Or you can do the following to manually set up your venv:
 
 `conda create -n OnmyojiAssist python=3.8`
 
-To install `paddle`:
+To install `paddle (gpu)`:
 
 ````
 conda install paddlepaddle-gpu==2.3.1 cudatoolkit=11.2 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
 ````
+OR `paddle (cpu)`:
+
+```
+conda install paddlepaddle==2.3.1 --channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/
+```
 
 To install the rest of packages:
 
